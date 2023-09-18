@@ -2,14 +2,8 @@
     import { Database } from "sqlite3";
 
     
-
-    const filePath = "./data/employes.db"; // Ajuste o caminho do arquivo de banco de dados conforme necessário
-
-    
-
+    const filePath = "./data/employes.db";
     let db: Database | null = null;
-
-    
 
     const createDbConnection = () => {
         db = new sqlite3.Database(filePath, (error) => {
@@ -21,13 +15,10 @@
             }
         });
 
-    
-
         return db;
     };
 
     
-
     const createTable = () => {
         const createTableQuery = `
             CREATE TABLE IF NOT EXISTS employees (
@@ -45,7 +36,4 @@
             }
         });
     };
-
-    
-
     export { createDbConnection };
